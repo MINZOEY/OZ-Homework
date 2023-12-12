@@ -1,0 +1,164 @@
+/* styles.css */
+
+body, html {
+    height: 100vh;
+    margin: 0;
+	overflow-y: scroll;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+	font-family: 'Bagel Fat One', sans-serif;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s; /* 애니메이션 효과를 위한 transition 추가 */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section.main-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+article {
+    flex: 1;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+}
+
+aside {
+    flex: 0.3;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 30px;
+}
+
+section.table-section {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.additional-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+.additional-content-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas:
+	'a a a'
+	'b c c'
+	'd d e';
+	gap: 1rem; 
+	margin: 2rem;
+  }
+
+
+  .item {
+	width: 100%; 
+	height: 300px;
+  }
+  
+  .img1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Bagel Fat One', sans-serif;
+    display: inline-block;
+    padding: 10px 25px;
+    background: #fff;
+
+    grid-area: a;
+    background: url('https://png.pngtree.com/thumb_back/fh260/background/20230112/pngtree-light-colored-silk-texture-is-gentle-and-atmospheric-image_1509781.jpg') center/cover; 
+  }
+  .img1 span {
+    background: linear-gradient(to right, #fbcac9, #8ca6ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .img1:hover span {
+    background: linear-gradient(to right, #00B306 0%, #F71916 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+  .img2 {
+    grid-area: b;
+    background: url('https://mblogthumb-phinf.pstatic.net/MjAyMTA4MDZfMTI1/MDAxNjI4MjI1MTcwODIx.W4e92n_t-ODtOHM2m6G5ClZ0Y1ERSWoX78Moe8kBi0Eg.ZokQBbpNJlCbTyv5QVx87ah-Q0ChyH6R3CtjzAI8r80g.JPEG.filmbybible/image.jpeg?type=w800') center/cover; /
+  }
+  
+  .img3 {
+    grid-area: c;
+    background: url('https://t1.daumcdn.net/cfile/tistory/144234374F7E1B020A') center/cover; 
+  }
+  
+  .img4 {
+    grid-area: d;
+    background: url('https://cdn.imweb.me/upload/S20210809c06cc49e8b65a/21eaaf7839ec5.jpg') center/cover; 
+  }
+  
+  .img5 {
+    grid-area: e;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlS-Cls143djkg7XAXTuOvCZgeQrOkX2RjDg&usqp=CAU') center/cover; 
+  }
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
