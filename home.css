@@ -24,6 +24,7 @@ nav {
     padding: 10px;
     position: sticky;
     width: 100%;
+    z-index: 999;
     top: 0;
     transition: top 0.3s; /* 애니메이션 효과를 위한 transition 추가 */
 }
@@ -61,6 +62,18 @@ aside {
     border: 1px solid #ccc;
     padding: 15px;
     margin: 30px;
+    position: relative;
+}
+aside img{
+  width: 100%;
+  height: 20rem;
+}
+/* 포지션이용하여 현수막에 넣어보기 */
+aside p{
+  position: absolute;
+  left: 160px;
+  top: 150px;
+  font-size: 50px;
 }
 
 section.table-section {
@@ -98,13 +111,13 @@ th, td {
 .grid-container {
 	display: grid;
 	grid-template-areas:
-	'a a a'
-	'b c c'
-	'd d e';
+	'a a a a'
+	'b x x c'
+	'd f f g'
+  'e e e e';
 	gap: 1rem; 
 	margin: 2rem;
   }
-
 
   .item {
 	width: 100%; 
@@ -117,7 +130,6 @@ th, td {
     text-align: center;
     font-family: 'Bagel Fat One', sans-serif;
     display: inline-block;
-    padding: 10px 25px;
     background: #fff;
 
     grid-area: a;
@@ -131,27 +143,182 @@ th, td {
   
   .img1:hover span {
     background: linear-gradient(to right, #00B306 0%, #F71916 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .img2 {
     grid-area: b;
-    background: url('https://mblogthumb-phinf.pstatic.net/MjAyMTA4MDZfMTI1/MDAxNjI4MjI1MTcwODIx.W4e92n_t-ODtOHM2m6G5ClZ0Y1ERSWoX78Moe8kBi0Eg.ZokQBbpNJlCbTyv5QVx87ah-Q0ChyH6R3CtjzAI8r80g.JPEG.filmbybible/image.jpeg?type=w800') center/cover; /
+    background: url('https://media.istockphoto.com/id/1566597402/ko/%EB%B2%A1%ED%84%B0/%EC%9D%B8%EA%B3%B5-%EC%A7%80%EB%8A%A5-%EB%B0%B0%EA%B2%BD-%EA%B0%9C%EB%85%90%EC%9D%80-%EC%B1%97%EB%B4%87-%EA%B8%B0%EA%B3%84-%ED%95%99%EC%8A%B5-%EC%B6%94%EC%83%81%EC%A0%81%EC%9D%B8-%EC%84%A0%EA%B3%BC-%ED%8C%8C%EB%8F%99%EC%9D%84-%EA%B0%80%EC%A7%80%EA%B3%A0-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98-eps10.jpg?s=2048x2048&w=is&k=20&c=xSpIqrwELHNwxYk3Gnk-RBGb02aiqxcrEZpSIIwrV0M=') center/cover;
+    
   }
   
   .img3 {
     grid-area: c;
-    background: url('https://t1.daumcdn.net/cfile/tistory/144234374F7E1B020A') center/cover; 
+    background: url('https://images.unsplash.com/photo-1702121269747-fe91af4fa4a8?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; 
+    
   }
   
   .img4 {
     grid-area: d;
-    background: url('https://cdn.imweb.me/upload/S20210809c06cc49e8b65a/21eaaf7839ec5.jpg') center/cover; 
+    background: url('https://images.unsplash.com/photo-1701948867768-6326f6cf9f73?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; 
+    background-size: 100%;
+    width: 100%
   }
   
   .img5 {
     grid-area: e;
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlS-Cls143djkg7XAXTuOvCZgeQrOkX2RjDg&usqp=CAU') center/cover; 
+    background: url('https://images.unsplash.com/photo-1700700736363-9c2ea1252996?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; 
+    height: 550px;
+
+  }
+  .img6 {
+    grid-area: f;
+    background: url('https://images.unsplash.com/photo-1701789668339-140f67db12df?q=80&w=1958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; 
+    
+  }
+  .img7 {
+    grid-area: g;
+    background: url('https://images.unsplash.com/photo-1702012464652-04c70b577758?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; 
+  }
+
+  .sub{
+    margin: 30px;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  .btn-3 {
+    background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:hover{
+     color: rgba(2,126,251,1);
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+  .inputBox{
+    margin-top: 30px;
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+  }
+  .inputBox input{
+    width: 50%;
+  }
+  /* Input 뒤 버튼 */
+  .btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  .btn:hover, .btn:focus {
+    color: #fff;
+    outline: 0;
+  }
+  .second {
+    border-radius: 3em;
+    border-color: #1abc9c;
+    color: #fff;
+    background-image: linear-gradient(to right, rgba(26, 188, 156, 0.6), rgba(26, 188, 156, 0.6) 5%, #1abc9c 5%, #1abc9c 10%, rgba(26, 188, 156, 0.6) 10%, rgba(26, 188, 156, 0.6) 15%, #1abc9c 15%, #1abc9c 20%, rgba(26, 188, 156, 0.6) 20%, rgba(26, 188, 156, 0.6) 25%, #1abc9c 25%, #1abc9c 30%, rgba(26, 188, 156, 0.6) 30%, rgba(26, 188, 156, 0.6) 35%, #1abc9c 35%, #1abc9c 40%, rgba(26, 188, 156, 0.6) 40%, rgba(26, 188, 156, 0.6) 45%, #1abc9c 45%, #1abc9c 50%, rgba(26, 188, 156, 0.6) 50%, rgba(26, 188, 156, 0.6) 55%, #1abc9c 55%, #1abc9c 60%, rgba(26, 188, 156, 0.6) 60%, rgba(26, 188, 156, 0.6) 65%, #1abc9c 65%, #1abc9c 70%, rgba(26, 188, 156, 0.6) 70%, rgba(26, 188, 156, 0.6) 75%, #1abc9c 75%, #1abc9c 80%, rgba(26, 188, 156, 0.6) 80%, rgba(26, 188, 156, 0.6) 85%, #1abc9c 85%, #1abc9c 90%, rgba(26, 188, 156, 0.6) 90%, rgba(26, 188, 156, 0.6) 95%, #1abc9c 95%, #1abc9c 100%);
+    background-position: 0 0;
+    background-size: 100%;
+    transition: background 300ms ease-in-out;
+  }
+  .second:hover {
+    background-position: 100px;
   }
 footer {
     background-color: #333;
