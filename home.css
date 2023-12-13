@@ -71,9 +71,9 @@ aside img{
 /* 포지션이용하여 현수막에 넣어보기 */
 aside p{
   position: absolute;
-  left: 160px;
-  top: 150px;
-  font-size: 50px;
+  left: 10%;
+  top: 45%;
+  font-size: 1.5em;
 }
 
 section.table-section {
@@ -320,6 +320,67 @@ th, td {
   .second:hover {
     background-position: 100px;
   }
+
+  .item:hover {
+    background-position: center;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  /* 각 이미지에 대한 호버 효과에 대한 설정 */
+  .img1:hover {
+    background-image: url('https://images.unsplash.com/photo-1702298430594-5d604a5f9dc1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  
+  .img2:hover {
+    background-image: url('https://images.unsplash.com/photo-1702352461386-15dcf064708a?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  
+  .img3:hover {
+    background-image: url('https://images.unsplash.com/photo-1702140944216-e09d1284067e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  
+  .img4:hover {
+    background-image: url('https://images.unsplash.com/photo-1503315883035-c3fb190b434e?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  
+  .img5:hover {
+    background-image: url('https://images.unsplash.com/photo-1700920370021-57f49891d953?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  
+  .img6:hover {
+    background-image: url('https://images.unsplash.com/photo-1699942681763-d1da9f692489?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  
+  .img7:hover {
+    background-image: url('https://images.unsplash.com/photo-1702116231095-dc3c24b545f4?q=80&w=1166&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+
+
+  .cooking-instructions {
+    /* margin-top: 20px; */
+    margin: 30px;
+
+}
+
+.cooking-instructions ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cooking-instructions li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cooking-instructions img {
+    width: 100px; /* Adjust the width as needed */
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.checklist{
+  margin: 30px;
+}
 footer {
     background-color: #333;
     color: #fff;
