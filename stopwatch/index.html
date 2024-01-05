@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>스톱워치</h1>
+	<p id="elapsedTime">경과 시간: 0:0:0</p>
+	<button id="startButton">시작</button>
+	<button id="stopButton">중지</button>
+	<button id="reSetButton">리셋</button>
+
+	<script>
+		//html 요소 가져오기
+		let startButton = document.getElementById('startButton');
+		let stopButton = document.getElementById('stopButton');
+		let reSetButton = document.getElementById('reSetButton');
+		let elapsedTime = document.getElementById('elapsedTime');
+
+		//시작 버튼 클릭 이벤트리스너
+			startButton.addEventListener('click', function(){
+				stopwatch.start();
+			});
+		//정지 버튼 클릭 이벤트리스너
+			stopButton.addEventListener('click', function(){
+				stopwatch.stop();
+				elapsedTime.textContent = '경과 시간 : ' + stopwatch.getFormattedElapsedTime();
+			});
+		//리셋 버튼 클릭 이벤트리스너
+			reSetButton.addEventListener('click', function(){
+				stopwatch.reset();
+				elapsedTime.textContent = '경과 시간 : 0:00:0';
+			});
+		
+
+		//스톱워치 객체 생성
+		let stopwatch = {
+			startTime : 0,
+			endTime : 0,
+			isRunning : false,
+			elapsedTime : 0, //경과시간 추적하는 속성
+			
+			//스톱워치 시작
+			start(){
+				if(!this.isRunning){
+					// 재시작시 카운트 이어감!
+					this.startTime = new Date().getTime() - this.elapsedTime;
+					this.isRunning = true;
+					console.log('스톱워치 시작');
+					updateTime()
+				}else{
+					console.log('이미 스톱워치가 실행 중!');
+				}
+			},
+			// 스톱워치 정지
+			stop(){
+				if(this.isRunning){
+					this.endTime= new Date().getTime();
+					this.elapsedTime = this.endTime - this.startTime;
+					this.isRunning = false;
+					console.log('스톱워치 종료');
+				}else{
+					console.log('스톱워치 실행 중이 아니라요!');
+				}
+			},
+			// 스톱워치 리셋
+			reset(){
+				this.startTime = 0;
+				this.endTime = 0;
+				this.elapsedTime = 0;
+				this.isRunning = false;
+				console.log('스톱워치 리셋~');
+			},
+
+			// 현재 경과시간 반환 - this.isRunning 속성을 확인하여 스톱워치가 실행 중인지 여부를 판단합니다.
+			getElapsedTime (){
+				if(this.isRunning){
+					return new Date().getTime() - this.startTime;
+				}else{
+					return this.endTime - this.startTime;
+				}
+			},
+			// 경과시간을 다시 포멧팅! '분:초:밀리초' 형식으로 반환하는 메서드
+			getFormattedElapsedTime(){
+				// this.getElapsedTime()을 호출하여 경과 시간을 얻습니다.
+				let elapsedTime = this.getElapsedTime();
+
+				// 경과 시간에서 분을 계산하기 위해 (elapsedTime / (1000 * 60))을 사용하고, Math.floor() 함수를 이용하여 소수점 이하를 버립니다.
+				let minutes = Math.floor(elapsedTime / (1000 * 60));
+
+				// 경과 시간에서 초를 계산하기 위해 (elapsedTime % (1000 * 60)) / 1000을 사용하고, 다시 Math.floor() 함수를 이용하여 소수점 이하를 버립니다.
+				let seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+				// 경과 시간에서 밀리초를 계산하기 위해 elapsedTime % 1000을 사용합니다.
+				let milliseconds = elapsedTime % 1000;
+
+				return `${minutes} : ${seconds} : ${milliseconds}`;
+			}
+		};
+		// 경과 시간 업데이트 함수
+		function updateTime(){
+			if(stopwatch.isRunning){
+				elapsedTime.textContent = '경과 시간 : '+ stopwatch.getFormattedElapsedTime();
+				setTimeout(updateTime, 10);  //10밀리초마다 경과 시간 업데이트
+			}
+		}
+
+
+	</script>
+</body>
+</html>

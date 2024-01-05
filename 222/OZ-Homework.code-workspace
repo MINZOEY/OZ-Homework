@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../Downloads/채팅방만들기-하연"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "채팅방만들기-하연"
+	}
+}
